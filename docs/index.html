@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amirreza Shams — Software Engineer</title>
+  <meta name="description" content="Portfolio of Amirreza Shams, Math–CS @ UC San Diego. Software engineering and data-adjacent projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #131722;
+      --muted: #9aa4b2;
+      --text: #e8eef6;
+      --accent: #6ea8fe;
+      --accent-2: #8ee3f5;
+      --ring: rgba(110,168,254,0.45);
+      --border: #1f2a3c;
+    }
+    * { box-sizing: border-box }
+    html, body {
+      margin:0; padding:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg); color: var(--text);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px }
+    header {
+      position: sticky; top:0; z-index: 50;
+      background: rgba(11,13,18,0.75);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid #1e2633;
+    }
+    .nav-row { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .avatar {
+      width:36px; height:36px; border-radius:10px;
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 4px var(--ring);
+      flex: 0 0 auto;
+    }
+    nav ul { display:flex; gap: 16px; list-style:none; margin:0; padding:0 }
+    nav a { display:inline-block; padding: 10px 12px; border-radius: 10px; }
+    nav a.active, nav a:hover { background: #1b2230 }
+    .resume-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#0b0d12 !important; border-radius:8px; padding:8px 12px; font-weight:600;
+    }
+    .hero { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; padding: 48px 0 }
+    .badge {
+      display:inline-flex; align-items:center; gap:8px; background: #0e1420;
+      color: var(--muted); border: 1px solid var(--border);
+      border-radius: 999px; padding: 6px 12px; font-size: 12px
+    }
+    .title { font-size: clamp(28px, 4vw, 44px); margin: 8px 0 12px; line-height: 1.1 }
+    .subtitle { color: var(--muted); max-width: 60ch }
+    .btnrow { display:flex; gap:12px; margin-top:16px; flex-wrap: wrap }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding: 10px 14px; border-radius: 12px; border:1px solid #263246;
+      background:#151b26; color: var(--text); font-weight: 600
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0d12; border:none }
+    .section { padding: 32px 0; border-top: 1px solid #1e2633 }
+    .section h2 { font-size: 22px; margin: 0 0 14px }
+    .grid { display:grid; gap:16px }
+    .cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .card {
+      background: var(--card); border:1px solid var(--border);
+      border-radius: 16px; padding: 18px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.25) }
+    .proj h3 { margin:0 0 6px; font-size: 18px }
+    .tags { display:flex; gap:8px; flex-wrap: wrap; margin-top:8px }
+    .tag { font-size: 12px; background: #0f1520; border:1px solid #253149; color: var(--muted); padding: 4px 8px; border-radius: 999px }
+    .split { display:grid; grid-template-columns: 1fr 1fr; gap:16px }
+    .muted { color: var(--muted) }
+    footer { padding: 40px 0; color: var(--muted); text-align:center; border-top: 1px solid #1e2633 }
+    @media (max-width: 880px) { .hero { grid-template-columns: 1fr; } .split { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-row">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <strong>Amirreza Shams</strong>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="resume-btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <!-- New Portfolio (PDF) button in the header -->
+          <li><a class="resume-btn" href="AmirrezaShamsPortfolio.pdf" target="_blank" rel="noopener">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="badge" aria-label="Current status">Software Engineer · Math–CS @ UC San Diego</span>
+        <h1 class="title">ABOUT</h1>
+        <p class="subtitle">
+          I’m a software engineer with a mathematics–computer science background and internship experience in web development and automation. I’ve shipped a production web MVP in 3 weeks, led automated testing to &gt;90% coverage, and built backends with Node/Express, PostgreSQL, and Docker. Based in Los Angeles; open to roles anywhere in California.
+        </p>
+        <div class="btnrow" role="group" aria-label="Primary actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="btn" href="AmirrezaShamsPortfolio.pdf" target="_blank" rel="noopener">View Portfolio</a>
+          <a class="btn" href="https://github.com/AmirrezaSH007" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/amirreza-shams-123361299/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:amirrezash007@gmail.com">Email Me</a>
+        </div>
+      </div>
+      <aside class="card" aria-label="Quick summary">
+        <h2 style="margin-top:0">Quick Summary</h2>
+        <ul class="muted" style="line-height:1.6; padding-left:18px;">
+          <li><strong>Focus:</strong> Software engineering (also open to data/AI-adjacent roles)</li>
+          <li><strong>Location:</strong> Los Angeles, San Diego, Bay Area</li>
+          <li><strong>Experience:</strong> Software Engineering Internship (2024), shipped production features</li>
+          <li><strong>Degree:</strong> B.S. Mathematics–Computer Science (Expected 2026 — coursework complete except one class)</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Featured Projects</h2>
+      <div class="grid cards">
+        <article class="card proj">
+          <h3>
+            <a href="https://lighthearted-brioche-4c7d61.netlify.app/pages/dashboard.html" target="_blank" rel="noopener">
+              Job Application Tracker
+            </a>
+          </h3>
+          <p class="muted">
+            MVP shipped in 3 weeks for classmates to track job/intern/volunteer applications. Implemented schema versioning, deterministic IDs, and a small state machine to prevent invalid transitions. Led automated tests (&gt;90% coverage) with Jest & Puppeteer and integrated CI via GitHub Actions.
+          </p>
+          <p>
+            <a href="https://github.com/AmirrezaSH007/Job-Application-Project" target="_blank" rel="noopener">View Code on GitHub →</a>
+            &nbsp;|&nbsp;
+            <a href="https://lighthearted-brioche-4c7d61.netlify.app/pages/dashboard.html" target="_blank" rel="noopener">Live Demo →</a>
+          </p>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Jest</span>
+            <span class="tag">Puppeteer</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <h3>URL Shortener API</h3>
+          <p class="muted">
+            Backend service with CRUD endpoints, validation, basic rate limiting, and click analytics. Containerized with Docker; added CI for tests/lint. Includes a minimal admin CLI for bulk import/cleanup.
+          </p>
+          <p>
+            <a href="https://github.com/AmirrezaSH007/URL-Shortener-API" target="_blank" rel="noopener">View Code →</a>
+          </p>
+          <div class="tags">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span><span class="tag">Jest</span><span class="tag">Supertest</span>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <h3>Automation Utilities</h3>
+          <p class="muted">
+            Python/Bash scripts for content ops: filename validation, checksum verification, and batch uploads. Reduced manual errors and improved throughput in publishing workflows.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Automation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+      <article class="card">
+        <header style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline;">
+          <strong>Software Engineering Intern</strong>
+          <span class="muted">Remote · Mar 2024 – Sep 2024</span>
+        </header>
+        <ul class="muted" style="line-height:1.6; padding-left:18px; margin:8px 0 0;">
+          <li>Contributed to a production web platform by building new features, refactoring legacy code, and improving front-end responsiveness and accessibility.</li>
+          <li>Developed automation scripts to streamline content management and file validation processes, reducing manual work and upload errors.</li>
+          <li>Implemented client/server validation and API integration for secure data submission, enhancing system reliability and performance.</li>
+          <li>Introduced unit tests (Jest) and CI integration for higher code quality and consistency across deployments.</li>
+        </ul>
+        <div class="tags" style="margin-top:10px;">
+          <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Python</span>
+          <span class="tag">Bash</span><span class="tag">Git/GitHub</span><span class="tag">GitHub Actions</span><span class="tag">Jest</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="split">
+        <div class="card">
+          <h3 style="margin-top:0">Languages</h3>
+          <p class="muted">Python, Java, C++, JavaScript, HTML/CSS, SQL</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Frameworks & Tools</h3>
+          <p class="muted">Node.js, Express, PostgreSQL, Docker, Git/GitHub, GitHub Actions, Jest, Puppeteer</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Concepts</h3>
+          <p class="muted">Data Structures & Algorithms, OOP, REST APIs/HTTP, CI/CD, Testing & Coverage, Debugging</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Interests</h3>
+          <p class="muted">Web platforms, testing & reliability, backend systems, automation</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <article class="card">
+        <header style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline;">
+          <strong>University of California, San Diego — B.S. Mathematics–Computer Science</strong>
+          <span class="muted">Expected 2026</span>
+        </header>
+        <p class="muted" style="margin:8px 0 0;">Coursework complete except one class. Relevant: Algorithms, Data Structures & Systems, Software Engineering, Cryptography, Linear Algebra, Probability & Statistics.</p>
+      </article>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <div class="card">
+        <p>📍 Los Angeles, CA (open to San Diego & Bay Area)</p>
+        <p>📧 <a href="mailto:amirrezash007@gmail.com">amirrezash007@gmail.com</a> · 📱 (214) 430-0366</p>
+        <p>🔗 <a href="https://github.com/AmirrezaSH007" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/amirreza-shams-123361299/" target="_blank" rel="noopener">LinkedIn</a> · <a href="AmirrezaShamsPortfolio.pdf" target="_blank" rel="noopener">Portfolio (PDF)</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Amirreza Shams — Built with semantic HTML & vanilla CSS</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const i = sections.indexOf(entry.target);
+        if (i >= 0) {
+          navLinks[i].classList.toggle('active', entry.isIntersecting);
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach((s) => observer.observe(s));
+  </script>
+</body>
+</html>
